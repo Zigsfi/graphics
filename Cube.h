@@ -82,23 +82,29 @@ public:
 
         }
         glBegin(GL_TRIANGLE_STRIP);
+        glNormal3f(0, 0, -1);
         drawXYFace(Point(-0.5, -0.5, -0.5), Point(0.5, 0.5, -0.5));
         glEnd();
         glBegin(GL_TRIANGLE_STRIP);
+        glNormal3f(0, 0, 1);
         drawXYFace(Point(-0.5, -0.5, 0.5), Point(0.5, 0.5, 0.5));
         glEnd();
 
         glBegin(GL_TRIANGLE_STRIP);
+        glNormal3f(0, -1, 0);
         drawXZFace(Point(-0.5, -0.5, -0.5), Point(0.5, -0.5, 0.5));
         glEnd();
         glBegin(GL_TRIANGLE_STRIP);
+        glNormal3f(0, 1, 0);
         drawXZFace(Point(-0.5, 0.5, -0.5), Point(0.5, 0.5, 0.5));
         glEnd();
 
         glBegin(GL_TRIANGLE_STRIP);
+        glNormal3f(-1, 0, 0);
         drawYZFace(Point(-0.5, -0.5, -0.5), Point(-0.5, 0.5, 0.5));
         glEnd();
         glBegin(GL_TRIANGLE_STRIP);
+        glNormal3f(1, 0, 0);
         drawYZFace(Point(0.5, -0.5, -0.5), Point(0.5, 0.5, 0.5));
         glEnd();
     };
