@@ -4,12 +4,13 @@ Tufts COMP 175: Assignment 1: Shapes
 
 ****************************************************************************/
 
-#include <GL/glui.h>
+#include </Library/Frameworks/GLUI.framework/Headers/glui.h>
 #include "Shape.h"
 #include "Cube.h"
 #include "Cylinder.h"
 #include "Cone.h"
 #include "Sphere.h"
+#include "special.h"
 
 enum OBJ_TYPE {
 	SHAPE_CUBE = 0,
@@ -40,6 +41,7 @@ Cube* cube = new Cube();
 Cylinder* cylinder = new Cylinder();
 Cone* cone = new Cone();
 Sphere* sphere = new Sphere();
+Special* special = new Special();
 Shape* shape = cube;
 
 /***************************************** callback_obj() ***********/
@@ -60,7 +62,7 @@ void callback_obj(int id) {
 		shape = sphere;
 		break;
 	case SHAPE_SPECIAL1:
-		shape = cube;
+		shape = special;
 		break;
 	default:
 		shape = cube;
@@ -222,9 +224,9 @@ int main(int argc, char* argv[])
 	new GLUI_Checkbox(render_panel, "Fill", &fill);
 	new GLUI_Checkbox(render_panel, "Normal", &normal);
 	(new GLUI_Spinner(render_panel, "Segments X:", &segmentsX))
-		->set_int_limits(3, 60);
+		->set_int_limits(2, 60);
 	(new GLUI_Spinner(render_panel, "Segments Y:", &segmentsY))
-		->set_int_limits(3, 60);
+		->set_int_limits(2, 60);
 
 
 	GLUI_Panel *camera_panel = glui->add_panel("Camera");
