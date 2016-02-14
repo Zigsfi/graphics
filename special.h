@@ -89,11 +89,11 @@ public:
                 float z2 = (((float)j + 0.5f) / m_segmentsY) - 0.5f;
                 float y1, y2;
                 if (j % 2 == 0) {
-                    y1 =  0.5;
-                    y2 = -0.5;
-                } else {
                     y1 = -0.5;
                     y2 =  0.5;
+                } else {
+                    y1 =  0.5;
+                    y2 = -0.5;
                 }
                 if (i + 1 < m_segmentsX) {
                     glBegin(GL_TRIANGLE_STRIP);
@@ -144,11 +144,11 @@ public:
                     z2 = (((float)j + 1) / m_segmentsY) - 0.5f;
                     
                     if ((int)i % 2 == 0) {
-                        y1 = -0.5;
-                        y2 =  0.5;
-                    } else {
                         y1 =  0.5;
                         y2 = -0.5;
+                    } else {
+                        y1 = -0.5;
+                        y2 =  0.5;
                     }
 
                     glBegin(GL_TRIANGLE_STRIP);
