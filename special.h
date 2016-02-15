@@ -18,10 +18,15 @@ public:
 
                 glBegin(GL_TRIANGLE_STRIP);
                 
+                glNormal3f(0, 2*y, 0);
                 glVertex3f(x,  y, z);
+                glNormal3f(0, 2*y, 0);
                 glVertex3f(x2, y, z);
+                glNormal3f(0, 2*y, 0);
                 glVertex3f(x2, y, z2);
+                glNormal3f(0, 2*y, 0);
                 glVertex3f(x,  y, z);
+                glNormal3f(0, 2*y, 0);
                 glVertex3f(x,  y, z2);
                 
                 glEnd();
@@ -39,40 +44,60 @@ public:
 
                 glBegin(GL_TRIANGLE_STRIP);
 
+                glNormal3f(0, 0, -1);
                 glVertex3f(x, -0.5f, z);
+                glNormal3f(0, 0, -1);
                 glVertex3f(x2, -0.5f, z);
+                glNormal3f(0, 0, -1);
                 glVertex3f(x2, 0.5f, z);
+                glNormal3f(0, 0, -1);
                 glVertex3f(x, -0.5f, z);
+                glNormal3f(0, 0, -1);
                 glVertex3f(x, 0.5f, z);
 
                 glEnd();
                 
                 glBegin(GL_TRIANGLE_STRIP);
 
+                glNormal3f(0, 0, 1);
                 glVertex3f(x2, -0.5f, z);
+                glNormal3f(0, 0, 1);
                 glVertex3f(x2, -0.5f, z2);
+                glNormal3f(0, 0, 1);
                 glVertex3f(x2, 0.5f, z2);
+                glNormal3f(0, 0, 1);
                 glVertex3f(x2, -0.5f, z);
+                glNormal3f(0, 0, 1);
                 glVertex3f(x2, 0.5f, z);
 
                 glEnd();
                 
                 glBegin(GL_TRIANGLE_STRIP);
 
+                glNormal3f(0, 0, 1);
                 glVertex3f(x, -0.5f, z2);
+                glNormal3f(0, 0, 1);
                 glVertex3f(x2, -0.5f, z2);
+                glNormal3f(0, 0, 1);
                 glVertex3f(x2, 0.5f, z2);
+                glNormal3f(0, 0, 1);
                 glVertex3f(x, -0.5f, z2);
+                glNormal3f(0, 0, 1);
                 glVertex3f(x, 0.5f, z2);
 
                 glEnd();
  
                 glBegin(GL_TRIANGLE_STRIP);
 
+                glNormal3f(0, 0, -1);
                 glVertex3f(x, -0.5f, z);
+                glNormal3f(0, 0, -1);
                 glVertex3f(x, -0.5f, z2);
+                glNormal3f(0, 0, -1);
                 glVertex3f(x, 0.5f, z2);
+                glNormal3f(0, 0, -1);
                 glVertex3f(x, -0.5f, z);
+                glNormal3f(0, 0, -1);
                 glVertex3f(x, 0.5f, z);
 
                 glEnd();
@@ -98,40 +123,66 @@ public:
                 if (i + 1 < m_segmentsX) {
                     glBegin(GL_TRIANGLE_STRIP);
 
+                    glNormal3f(0, 0, -1);
                     glVertex3f(x, y1, z);
+                    glNormal3f(0, 0, -1);
                     glVertex3f(x2, 0.0f, z);
+                    glNormal3f(0, 0, -1);
                     glVertex3f(x2, y2, z);
+                    glNormal3f(0, 0, -1);
                     glVertex3f(x, y1, z);
+                    glNormal3f(0, 0, -1);
                     glVertex3f(x, 0.0f, z);
 
                     glEnd();
                     
                     glBegin(GL_TRIANGLE_STRIP);
 
+                    glNormal3f(0, 0, 1);
                     glVertex3f(x, y1, z2);
+                    glNormal3f(0, 0, 1);
                     glVertex3f(x2, 0.0f, z2);
+                    glNormal3f(0, 0, 1);
                     glVertex3f(x2, y2, z2);
+                    glNormal3f(0, 0, 1);
                     glVertex3f(x, y1, z2);
+                    glNormal3f(0, 0, 1);
                     glVertex3f(x, 0.0f, z2);
 
                     glEnd();
                     
                     glBegin(GL_TRIANGLE_STRIP);
 
+                    Vector vn = Vector((-.5) * y1, (x2 - x) * y1, 0);
+                    vn.normalize();
+
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x, y1, z);
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x, y1, z2);
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x2, 0.0f, z2);
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x, y1, z);
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x2, 0.0f, z);
 
                     glEnd();
                     
                     glBegin(GL_TRIANGLE_STRIP);
 
+                    vn[0] *= -1;
+                    vn[1] *= -1;
+
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x, 0.0f, z);
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x, 0.0f, z2);
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x2, y2, z2);
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x, 0.0f, z);
+                    glNormal3f(vn[0], vn[1], vn[2]); 
                     glVertex3f(x2, y2, z);
 
                     glEnd();
@@ -153,40 +204,66 @@ public:
 
                     glBegin(GL_TRIANGLE_STRIP);
 
+                    Vector vn = Vector(0, (z2 - z) * y1, (.5) * y1);
+                    vn.normalize();
+                    
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x, y1, z);
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x2, y1, z);
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x2, 0.0f, z2);
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x, y1, z);
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x, 0.0f, z2);
 
                     glEnd();
                     
                     glBegin(GL_TRIANGLE_STRIP);
 
+                    vn[0] *= -1;
+                    vn[1] *= -1;
+                    
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x, 0.0f, z);
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x2, 0.0f, z);
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x2, y2, z2);
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x, 0.0f, z);
+                    glNormal3f(vn[0], vn[1], vn[2]);
                     glVertex3f(x, y2, z2);
 
                     glEnd();
                     
                     glBegin(GL_TRIANGLE_STRIP);
 
+                    glNormal3f(1, 0, 0);
                     glVertex3f(x, y1, z);
+                    glNormal3f(1, 0, 0);
                     glVertex3f(x, 0.0f, z);
+                    glNormal3f(1, 0, 0);
                     glVertex3f(x, y2, z2);
+                    glNormal3f(1, 0, 0);
                     glVertex3f(x, y1, z);
+                    glNormal3f(1, 0, 0);
                     glVertex3f(x, 0.0f, z2);
 
                     glEnd();
                     
                     glBegin(GL_TRIANGLE_STRIP);
 
+                    glNormal3f(-1, 0, 0);
                     glVertex3f(x2, y1, z);
+                    glNormal3f(-1, 0, 0);
                     glVertex3f(x2, 0.0f, z);
+                    glNormal3f(-1, 0, 0);
                     glVertex3f(x2, y2, z2);
+                    glNormal3f(-1, 0, 0);
                     glVertex3f(x2, y1, z);
+                    glNormal3f(-1, 0, 0);
                     glVertex3f(x2, 0.0f, z2);
 
                     glEnd();
