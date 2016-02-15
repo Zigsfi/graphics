@@ -183,10 +183,10 @@ public:
         drawXYFace(Point(-0.5, -0.5, 0.5), Point(0.5, 0.5, 0.5),
                 Vector(0, 0, 1), true
                 );
-        drawXYFace(Point(-0.5, -0.5, 0.5), Point(0.5, 0.5, 0.5),
-                Vector(0, 0, 1), true
-                );
 
+        drawXZFace(Point(-0.5, 0.5, -0.5), Point(0.5, 0.5, 0.5),
+                Vector(0, 1, 0), true
+                );
         drawXZFace(Point(-0.5, -0.5, -0.5), Point(0.5, -0.5, 0.5),
                 Vector(0, -1, 0), true
                 );
